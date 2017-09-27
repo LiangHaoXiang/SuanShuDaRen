@@ -9,8 +9,9 @@ public class AnswerManager : MonoBehaviour {
 
     //这个类为判断答案是正确的，正确之后，停止时间的计时，并且重新进行一下一个关卡
 
-    public char[] answer = new char[] { '6', 'c' };
-    public int count = 0;
+    //public char[] answer = new char[] { '6', 'c' };
+    public int answer = -1;
+    //public int count = 0;
     public int scoreNumber = 0;
     public bool isOnGame;   //在场景5的游戏状态
 
@@ -39,65 +40,68 @@ public class AnswerManager : MonoBehaviour {
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name.Equals("Scene5(SuanShu)"))
-        {
-            if (isOnGame)
-            {
-                if (answer[count] == 'c')
-                {
-                    ResultManager.Instance.YouAreRight();
-                    AudioSourceManager.Instance.Play(GameObject.Find("GetScoureAudio").gameObject, "Unbelieve");
-                    count = 0;
-                    isOnGame = false;
-                }
-            }
-        }
+        //if (SceneManager.GetActiveScene().name.Equals("Scene5(SuanShu)"))
+        //{
+        //    if (isOnGame)
+        //    {
+        //        if (answer[count] == 'c')
+        //        {
+        //            ResultManager.Instance.YouAreRight();
+        //            AudioSourceManager.Instance.Play(GameObject.Find("GetScoureAudio").gameObject, "Unbelieve");
+        //            count = 0;
+        //            isOnGame = false;
+        //        }
+        //    }
+        //}
 
     }
 
     public void IsAnswerRight(string number)
     {
-
-        if ((answer[count] == number.ToCharArray()[0]) )
+        if (isOnGame)
         {
-            if (20f <= TimeManager.Instance.GetTime() && TimeManager.Instance.GetTime() < 30f)
+            //if ((answer[count] == number.ToCharArray()[0]) )
+            if ((answer == int.Parse(number)))
             {
-                if (answer[count + 1] == 'c')
+                if (20f <= TimeManager.Instance.GetTime() && TimeManager.Instance.GetTime() < 30f)
                 {
+                    //if (answer[count + 1] == 'c')
+                    //{
                     scoreNumber += 12;
-                    
+
                     ScoreManager.Instance.SetScore(scoreNumber);
+                    //}
                 }
-            }
-            else if (5f <= TimeManager.Instance.GetTime() && TimeManager.Instance.GetTime() < 20f)
-            {
-                if (answer[count + 1] == 'c')
+                else if (5f <= TimeManager.Instance.GetTime() && TimeManager.Instance.GetTime() < 20f)
                 {
+                    //if (answer[count + 1] == 'c')
+                    //{
                     scoreNumber += 10;
                     ScoreManager.Instance.SetScore(scoreNumber);
+                    //}
                 }
+                else
+                {
+                    //if (answer[count + 1] == 'c')
+                    //{
+                    scoreNumber += 8;
+                    ScoreManager.Instance.SetScore(scoreNumber);
+                    //}
+                }
+                //在答题框显示正确的答案
+                AudioSourceManager.Instance.Play(GameObject.Find("IntrodutionAudio").gameObject, "ShowTheAnswer");
+
+                answerText.Append(number);
+                //答题面板实时显示射中的答案
+                UIManager.Instance.resultText.text = answerText.ToString();
+                //count++;
+                ResultManager.Instance.YouAreRight();
+                AudioSourceManager.Instance.Play(GameObject.Find("GetScoureAudio").gameObject, "Unbelieve");
+                isOnGame = false;
             }
             else
             {
-                if (answer[count + 1] == 'c')
-                {
-                    scoreNumber += 8;
-                    ScoreManager.Instance.SetScore(scoreNumber);
-                }
-            }
-            //在答题框显示正确的答案
-            AudioSourceManager.Instance.Play(GameObject.Find("IntrodutionAudio").gameObject, "ShowTheAnswer");
 
-            answerText.Append(number);
-
-            UIManager.Instance.resultText.text = answerText.ToString();
-            count++;
-
-        }
-        else
-        {
-            if (isOnGame)
-            {
                 AudioSourceManager.Instance.Play(GameObject.Find("GetScoureAudio").gameObject, "Wrong");
                 scoreNumber -= 5;
                 ScoreManager.Instance.SetScore(scoreNumber);
@@ -109,35 +113,56 @@ public class AnswerManager : MonoBehaviour {
 
     public void SetAnswer(int num1,int num2,string operatorStr)
     {
-        char[] rightAnswerChar; //存放计算结果再加个c字符
-        char[] tempChar;    //临时字符数组，存放计算结果
+        #region 原来
+        //char[] rightAnswerChar; //存放计算结果再加个c字符
+        //char[] tempChar;    //临时字符数组，存放计算结果
+        //switch (operatorStr)
+        //{
+        //    case "+":
+        //        tempChar = (num1 + num2).ToString().ToCharArray();
+        //        break;
+        //    case "-":
+        //        tempChar = (num1 - num2).ToString().ToCharArray();
+        //        break;
+        //    case "*":
+        //        tempChar = (num1 * num2).ToString().ToCharArray();
+        //        break;
+        //    case "/":
+        //        tempChar = (num1 / num2).ToString().ToCharArray();
+        //        break;
+        //    default:
+        //        tempChar = new char[0];
+        //        break;
+        //}
+
+        //rightAnswerChar = new char[tempChar.Length + 1];//结果数组长度总比临时字符数组长1
+        //for (int i = 0; i < tempChar.Length; i++)
+        //{
+        //    rightAnswerChar[i] = tempChar[i];
+        //}
+        //rightAnswerChar[tempChar.Length] = 'c';
+
+        //answer = rightAnswerChar;
+#endregion
+
         switch (operatorStr)
         {
             case "+":
-                tempChar = (num1 + num2).ToString().ToCharArray();
+                answer = num1 + num2;
                 break;
             case "-":
-                tempChar = (num1 - num2).ToString().ToCharArray();
+                answer = num1 - num2;
                 break;
             case "*":
-                tempChar = (num1 * num2).ToString().ToCharArray();
+                answer = num1 * num2;
                 break;
             case "/":
-                tempChar = (num1 / num2).ToString().ToCharArray();
+                answer = num1 / num2;
                 break;
             default:
-                tempChar = new char[0];
+                answer = -1;
                 break;
         }
-
-        rightAnswerChar = new char[tempChar.Length + 1];//结果数组长度总比临时字符数组长1
-        for (int i = 0; i < tempChar.Length; i++)
-        {
-            rightAnswerChar[i] = tempChar[i];
-        }
-        rightAnswerChar[tempChar.Length] = 'c';
-
-        answer = rightAnswerChar;
     }
 
     public void ClearScoreNumber()

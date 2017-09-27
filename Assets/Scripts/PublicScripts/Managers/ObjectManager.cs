@@ -115,6 +115,10 @@ public class ObjectManager : MonoBehaviour
     public void CreateObject(Vector3 ballonPosition, int number)
     {
         int randomShapeNum = RandomBallonShape();
+        if (number > 10)
+        {
+            randomShapeNum = 3;//若气球数字是十位数，则用心形气球
+        }
         GameObject ballon = Instantiate(Resources.Load("Prefabs/Scene5(SuanShu)/Ballon" + randomShapeNum, typeof(GameObject))) as GameObject;
         ballon.transform.position = ballonPosition;
         ballon.transform.parent = GameObject.Find("BallonsCreates").transform;
