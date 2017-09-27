@@ -20,8 +20,8 @@ public class BallonObject : MonoBehaviour
             if (ballonNumber == "?")
             {
                 this.transform.parent.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-                this.transform.GetChild(3).GetComponent<MeshRenderer>().material.color = Color.green;
-                this.transform.GetChild(3).transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                //this.transform.GetChild(3).GetComponent<MeshRenderer>().material.color = Color.green;
+                //this.transform.GetChild(3).transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             }
             Invoke("DelayPlayAnimation", (int)Random.Range(1, 4));
             this.transform.LookAt(GameObject.Find("MainController").transform);
@@ -35,11 +35,11 @@ public class BallonObject : MonoBehaviour
         rotation_Y = gameObject.transform.parent.localRotation.eulerAngles.y % 360;
         if (90 <= rotation_Y && rotation_Y <= 270)
         {
-            gameObject.transform.GetChild(2).gameObject.SetActive(false);
+            gameObject.transform.FindChild("BallonNumber").gameObject.SetActive(false);
         }
         else
         {
-            gameObject.transform.GetChild(2).gameObject.SetActive(true);
+            gameObject.transform.FindChild("BallonNumber").gameObject.SetActive(true);
         }
     }
 

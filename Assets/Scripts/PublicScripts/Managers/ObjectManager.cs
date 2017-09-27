@@ -1,130 +1,4 @@
-﻿//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-//using UnityEngine.SceneManagement;
-
-//public class ObjectManager : MonoBehaviour
-//{
-
-//    int BallonCount = 0;
-//    int createBallonNumber;
-//    float BallonToy;
-//    float BallonTox;
-//    float BallonToz;
-//    bool IsCreate = false;
-//    public List<GameObject> ballonObject = new List<GameObject>();
-//    [HideInInspector]
-//    public Transform ballonsCenter;     //所有生成气球围绕的中心
-//    [HideInInspector]
-//    public Transform ballonTargetPoint; //生成气球的目标位置
-//    public static ObjectManager instance;
-
-//    public static ObjectManager Instance
-//    {
-//        get
-//        {
-//            if (instance == null)
-//            {
-//                instance = (ObjectManager)FindObjectOfType(typeof(ObjectManager));
-//            }
-
-//            return instance;
-//        }
-//    }
-
-//    private void Awake()
-//    {
-//        instance = this;
-//    }
-
-//    void Start()
-//    {
-//        //初始生成x,y,z的随机数
-//        Resultxyz();
-//    }
-
-//    void Update()
-//    {
-//        if (SceneManager.GetActiveScene().name.Equals("Scene5(SuanShu)"))
-//        {
-//            ballonsCenter = GameObject.Find("BallonsCenter").transform;
-//            ballonTargetPoint = GameObject.Find("BallonTargetPoint").transform;
-//            if (IsCreate)
-//            {
-//                if (BallonCount <= createBallonNumber)
-//                {
-//                    if (Mathf.Sqrt(BallonTox * BallonTox + BallonToy * BallonToy + BallonToz * BallonToz) < 2.5f)
-//                    {
-
-//                        if (BallonCount > 0)
-//                            ballonsCenter.Rotate(0, 18, 0);
-//                        CreateObject(new Vector3(ballonTargetPoint.position.x + BallonTox,
-//                            ballonTargetPoint.position.y + BallonToy, ballonTargetPoint.position.z + BallonToz), BallonCount);
-//                        BallonCount++;
-//                        Resultxyz();
-//                    }
-//                    else
-//                    {
-//                        Resultxyz();
-//                    }
-//                }
-//            }
-
-//        }
-
-//        if (BallonCount == createBallonNumber)
-//        {
-//            IsCreate = false;
-//        }
-//    }
-
-
-//    //控制产生气球的条件
-//    public void BeginCreate(int createBallonNumber)
-//    {
-//        AudioSourceManager.Instance.Play(GameObject.Find("IntrodutionAudio").gameObject, "ObjectShow");
-//        IsCreate = true;
-//        BallonCount = 0;
-//        this.createBallonNumber = createBallonNumber;
-//    }
-
-
-//    /// <summary>
-//    /// 创建新的气球
-//    /// </summary>
-//    /// <param name="ballonPosition"></param>
-//    /// <param name="number"></param>
-//    public void CreateObject(Vector3 ballonPosition, int number)
-//    {
-//        GameObject ballon = Instantiate(Resources.Load("Prefabs/Scene5(SuanShu)/Ballon", typeof(GameObject))) as GameObject;
-//        ballon.transform.GetChild(5).GetChild(0).GetComponent<MeshRenderer>().material.color = RandomManager.Instance.RandomColor();
-//        ballon.transform.position = ballonPosition;
-//        ballon.transform.parent = GameObject.Find("BallonsCreates").transform;
-
-//        ballonObject.Add(ballon);
-//        ballon.transform.FindChild("BallonSelf").transform.GetComponent<BallonObject>().setBallonNumber("" + (Mathf.Abs((number + 10) % 10)));
-//    }
-
-//    //随机生成气球距离顶点的范围的三维坐标随机数
-//    void Resultxyz()
-//    {
-//        BallonToy = Random.Range(-2.5f, 2.5f);
-//        BallonTox = Random.Range(-1f, 1f);
-//        BallonToz = Random.Range(-1f, 1f);
-//    }
-
-//    //销毁所有气球
-//    public void DestoryBallon()
-//    {
-//        foreach (GameObject T in ballonObject)
-//        {
-//            Destroy(T);
-//        }
-//    }
-
-//}
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -240,7 +114,8 @@ public class ObjectManager : MonoBehaviour
     /// <param name="number"></param>
     public void CreateObject(Vector3 ballonPosition, int number)
     {
-        GameObject ballon = Instantiate(Resources.Load("Prefabs/Scene5(SuanShu)/Ballon", typeof(GameObject))) as GameObject;
+        int randomShapeNum = RandomBallonShape();
+        GameObject ballon = Instantiate(Resources.Load("Prefabs/Scene5(SuanShu)/Ballon" + randomShapeNum, typeof(GameObject))) as GameObject;
         ballon.transform.position = ballonPosition;
         ballon.transform.parent = GameObject.Find("BallonsCreates").transform;
         ballonObject.Add(ballon);
@@ -269,6 +144,12 @@ public class ObjectManager : MonoBehaviour
     void RandomBallonNum()
     {
         ballonNumber = (int)Random.Range(0, 10);
+    }
+
+    //气球随机形状编号
+    int RandomBallonShape()
+    {
+        return Random.Range(1, 6);
     }
 
     //销毁所有气球
