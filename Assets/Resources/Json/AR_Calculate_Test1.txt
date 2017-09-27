@@ -1,0 +1,85 @@
+{
+    "AR_Calculate_Test_Level1": [
+        {"ID": 1,"num1": 4,"num2": 2,"operation": "+"},
+        {"ID": 2,"num1": 7,"num2": 3,"operation": "-"},
+        {"ID": 3,"num1": 6,"num2": 5,"operation": "+"},
+        {"ID": 4,"num1": 9,"num2": 4,"operation": "-"},
+        {"ID": 5,"num1": 9,"num2": 8,"operation": "+"}
+    ],
+    "AR_Calculate_Test_Level2": [
+        {"ID": 1,"num1": 11,"num2": 2,"operation": "+"},
+        {"ID": 2,"num1": 17,"num2": 6,"operation": "-"},
+        {"ID": 3,"num1": 12,"num2": 2,"operation": "+"},
+        {"ID": 4,"num1": 18,"num2": 17,"operation": "-"},
+        {"ID": 5,"num1": 10,"num2": 16,"operation": "+"}
+    ],
+    "AR_Calculate_Test_Level3": [
+        {"ID": 1,"num1": 2,"num2": 2,"operation": "*"},
+        {"ID": 2,"num1": 3,"num2": 4,"operation": "*"},
+        {"ID": 3,"num1": 8,"num2": 4,"operation": "/"},
+        {"ID": 4,"num1": 6,"num2": 2,"operation": "/"},
+        {"ID": 5,"num1": 4,"num2": 5,"operation": "*"}
+    ],
+    "AR_Calculate_Test_Level4": [
+        {"ID": 1,"num1": 2,"num2": 10,"operation": "*"},
+        {"ID": 2,"num1": 13,"num2": 3,"operation": "*"},
+        {"ID": 3,"num1": 24,"num2": 8,"operation": "/"},
+        {"ID": 4,"num1": 20,"num2": 4,"operation": "/"},
+        {"ID": 5,"num1": 12,"num2": 6,"operation": "*"}
+    ],
+    "AR_Calculate_Test_Level5": [
+        {"ID": 1,"num1": 8,"num2": 5,"operation": "*"},
+        {"ID": 2,"num1": 23,"num2": 4,"operation": "-"},
+        {"ID": 3,"num1": 12,"num2": 8,"operation": "+"},
+        {"ID": 4,"num1": 16,"num2": 8,"operation": "/"},
+        {"ID": 5,"num1": 12,"num2": 5,"operation": "*"}
+    ],
+    "AR_Calculate_Test_Level6": [
+        {"ID": 1,"num1": 3,"num2": 15,"operation": "*"},
+        {"ID": 2,"num1": 23,"num2": 14,"operation": "-"},
+        {"ID": 3,"num1": 42,"num2": 18,"operation": "+"},
+        {"ID": 4,"num1": 49,"num2": 7,"operation": "/"},
+        {"ID": 5,"num1": 17,"num2": 3,"operation": "*"}
+    ],
+    "AR_Calculate_Test_Level7": [
+        {"ID": 1,"num1": 2,"num2": 2,"operation": "*"},
+        {"ID": 2,"num1": 3,"num2": 4,"operation": "*"},
+        {"ID": 3,"num1": 16,"num2": 4,"operation": "/"},
+        {"ID": 4,"num1": 18,"num2": 6,"operation": "/"},
+        {"ID": 5,"num1": 8,"num2": 9,"operation": "*"},
+        {"ID": 6,"num1": 8,"num2": 10,"operation": "*"},
+        {"ID": 7,"num1": 13,"num2": 4,"operation": "*"},
+        {"ID": 8,"num1": 32,"num2": 8,"operation": "/"},
+        {"ID": 9,"num1": 48,"num2": 16,"operation": "/"},
+        {"ID": 11,"num1": 15,"num2": 6,"operation": "*"},
+        {"ID": 12,"num1": 8,"num2": 5,"operation": "*"},
+        {"ID": 13,"num1": 13,"num2": 4,"operation": "-"},
+        {"ID": 14,"num1": 2,"num2": 8,"operation": "+"},
+        {"ID": 15,"num1": 16,"num2": 8,"operation": "/"},
+        {"ID": 16,"num1": 12,"num2": 5,"operation": "*"},
+        {"ID": 17,"num1": 3,"num2": 15,"operation": "*"},
+        {"ID": 18,"num1": 23,"num2": 14,"operation": "-"},
+        {"ID": 19,"num1": 42,"num2": 18,"operation": "+"},
+        {"ID": 20,"num1": 49,"num2": 7,"operation": "/"},
+        {"ID": 21,"num1": 2,"num2": 2,"operation": "*"},
+        {"ID": 22,"num1": 3,"num2": 4,"operation": "*"},
+        {"ID": 23,"num1": 16,"num2": 4,"operation": "/"},
+        {"ID": 24,"num1": 18,"num2": 6,"operation": "/"},
+        {"ID": 25,"num1": 8,"num2": 9,"operation": "*"},
+        {"ID": 26,"num1": 8,"num2": 10,"operation": "*"},
+        {"ID": 27,"num1": 13,"num2": 4,"operation": "*"},
+        {"ID": 28,"num1": 32,"num2": 8,"operation": "/"},
+        {"ID": 29,"num1": 48,"num2": 16,"operation": "/"},
+        {"ID": 30,"num1": 15,"num2": 6,"operation": "*"},
+        {"ID": 31,"num1": 8,"num2": 5,"operation": "*"},
+        {"ID": 32,"num1": 13,"num2": 4,"operation": "-"},
+        {"ID": 33,"num1": 2,"num2": 8,"operation": "+"},
+        {"ID": 34,"num1": 16,"num2": 8,"operation": "/"},
+        {"ID": 35,"num1": 12,"num2": 5,"operation": "*"},
+        {"ID": 36,"num1": 3,"num2": 15,"operation": "*"},
+        {"ID": 37,"num1": 23,"num2": 14,"operation": "-"},
+        {"ID": 38,"num1": 42,"num2": 18,"operation": "+"},
+        {"ID": 39,"num1": 49,"num2": 7,"operation": "/"},
+        {"ID": 40,"num1": 17,"num2": 3,"operation": "*"}
+    ]
+}
