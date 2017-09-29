@@ -43,13 +43,13 @@ public class InitGameManager : MonoBehaviour {
     /// <param name="isRotate">不同等级关卡的气球是否旋转</param>
     public void GameAgain(int ballonNumber, int level, float maxGameTime, bool isSmall, bool isRotate)
     {
-        StartCoroutine(InitGameObject(ballonNumber, isSmall, isRotate));
-
         AnswerManager.Instance.isOnGame = true;
         ChooseQuestionStyle(level);
         StartCoroutine(InitUI(maxGameTime));
         //设置正确答案
         AnswerManager.Instance.SetAnswer(num1, num2, operatorStr);
+
+        StartCoroutine(InitGameObject(ballonNumber, isSmall, isRotate));
     }
 
 

@@ -101,11 +101,11 @@ public class ResultManager : MonoBehaviour {
             //弹出这么关卡的用时情况，还有得分情况和按钮控制一下个关卡的进行
             if (InitGameManager.Instance.level < 7 && InitGameManager.Instance.id < 5)
             {
-                InitGameManager.Instance.GameAgain(20, InitGameManager.Instance.level, 20.0f, LevelManager.Instance.isSmall, LevelManager.Instance.isRotate);
+                InitGameManager.Instance.GameAgain(LevelManager.Instance.balloonCount, InitGameManager.Instance.level, 20.0f, LevelManager.Instance.isSmall, LevelManager.Instance.isRotate);
             }
             else if(InitGameManager.Instance.level == 7)
             {
-                InitGameManager.Instance.GameAgain(20, InitGameManager.Instance.level, 20.0f, LevelManager.Instance.isSmall, LevelManager.Instance.isRotate);
+                InitGameManager.Instance.GameAgain(LevelManager.Instance.balloonCount, InitGameManager.Instance.level, 20.0f, LevelManager.Instance.isSmall, LevelManager.Instance.isRotate);
             }
             else//否则若不是无尽模式且题目到达第五题即本关最后一题
             {

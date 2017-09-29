@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public bool isBeginTheGameByNewLevel = true;
 
+    public int balloonCount = 0;
     public float levelGameTime = 0; //不同等级关卡的时间
     public bool isSmall = false;    //不同等级关卡的气球是否缩小
     public bool isRotate = false;   //不同等级关卡的气球是否旋转
@@ -63,52 +64,59 @@ public class LevelManager : MonoBehaviour
         {
             case 1:
                 UIManager.Instance.TipsByLevel();
+                balloonCount = 8;
                 isSmall = false;
                 isRotate = false;
                 yield return new WaitForSeconds(0.1f);
-                InitGameManager.Instance.GameAgain(20, level, 20.0f, isSmall, isRotate);
+                InitGameManager.Instance.GameAgain(balloonCount, level, 20.0f, isSmall, isRotate);
                 break;
             case 2:
                 UIManager.Instance.TipsByLevel();
+                balloonCount = 9;
                 isSmall = false;
                 isRotate = false;
                 yield return new WaitForSeconds(0.1f);
-                InitGameManager.Instance.GameAgain(20, level, 20.0f, isSmall, isRotate);
+                InitGameManager.Instance.GameAgain(balloonCount, level, 20.0f, isSmall, isRotate);
                 break;
             case 3:
                 UIManager.Instance.TipsByLevel();
+                balloonCount = 9;
                 isSmall = true;
                 isRotate = false;
                 yield return new WaitForSeconds(0.1f);
-                InitGameManager.Instance.GameAgain(20, level, 25.0f, isSmall, isRotate);
+                InitGameManager.Instance.GameAgain(balloonCount, level, 25.0f, isSmall, isRotate);
                 break;
             case 4:
                 UIManager.Instance.TipsByLevel();
+                balloonCount = 10;
                 isSmall = true;
                 isRotate = false;
                 yield return new WaitForSeconds(0.1f);
-                InitGameManager.Instance.GameAgain(20, level, 20.0f, isSmall, isRotate);
+                InitGameManager.Instance.GameAgain(balloonCount, level, 20.0f, isSmall, isRotate);
                 break;
             case 5:
                 UIManager.Instance.TipsByLevel();
+                balloonCount = 10;
                 isSmall = false;
                 isRotate = true;
                 yield return new WaitForSeconds(0.1f);
-                InitGameManager.Instance.GameAgain(20, level, 25.0f, isSmall, isRotate);
+                InitGameManager.Instance.GameAgain(balloonCount, level, 25.0f, isSmall, isRotate);
                 break;
             case 6:
                 UIManager.Instance.TipsByLevel();
+                balloonCount = 11;
                 isSmall = false;
                 isRotate = true;
                 yield return new WaitForSeconds(0.1f);
-                InitGameManager.Instance.GameAgain(20, level, 20.0f, isSmall, isRotate);
+                InitGameManager.Instance.GameAgain(balloonCount, level, 20.0f, isSmall, isRotate);
                 break;
             case 7:
                 UIManager.Instance.TipsByLevel();
+                balloonCount = 11;
                 isSmall = true;
                 isRotate = true;
                 yield return new WaitForSeconds(0.1f);
-                InitGameManager.Instance.GameAgain(20, level, 20.0f, isSmall, isRotate);
+                InitGameManager.Instance.GameAgain(balloonCount, level, 20.0f, isSmall, isRotate);
                 break;
             default:
                 break;

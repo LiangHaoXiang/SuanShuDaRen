@@ -1,15 +1,77 @@
 fileFormatVersion: 2
-guid: 025cdaff3cb06c347a48de372ba14bea
-timeCreated: 1506504271
+guid: 5ed36d03fa79d1840b1826a700d53409
+timeCreated: 1506570429
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: polySurface87
+    100000: polySurface33
+    100002: polySurface34
+    100004: polySurface34 1
+    100006: polySurface35
+    100008: polySurface36
+    100010: polySurface37
+    100012: polySurface38
+    100014: polySurface38 1
+    100016: polySurface39
+    100018: polySurface40
+    100020: polySurface41
+    100022: polySurface42
+    100024: polySurface42 1
+    100026: polySurface43
+    100028: polySurface44
+    100030: polySurface45
+    100032: //RootNode
+    100034: transform1
+    100036: transform10
+    100038: transform11
+    100040: transform12
+    100042: transform13
+    100044: transform14
+    100046: transform15
+    100048: transform2
+    100050: transform3
+    100052: transform4
+    100054: transform5
+    100056: transform6
+    100058: transform7
+    100060: transform8
+    100062: transform9
+    400000: polySurface33
+    400002: polySurface34
+    400004: polySurface34 1
+    400006: polySurface35
+    400008: polySurface36
+    400010: polySurface37
+    400012: polySurface38
+    400014: polySurface38 1
+    400016: polySurface39
+    400018: polySurface40
+    400020: polySurface41
+    400022: polySurface42
+    400024: polySurface42 1
+    400026: polySurface43
+    400028: polySurface44
+    400030: polySurface45
+    400032: //RootNode
+    400034: transform1
+    400036: transform10
+    400038: transform11
+    400040: transform12
+    400042: transform13
+    400044: transform14
+    400046: transform15
+    400048: transform2
+    400050: transform3
+    400052: transform4
+    400054: transform5
+    400056: transform6
+    400058: transform7
+    400060: transform8
+    400062: transform9
+    2300000: polySurface42
+    3300000: polySurface42
+    4300000: polySurface42
     9500000: //RootNode
   materials:
     importMaterials: 1

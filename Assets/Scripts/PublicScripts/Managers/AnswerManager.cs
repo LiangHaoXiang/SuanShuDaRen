@@ -165,6 +165,11 @@ public class AnswerManager : MonoBehaviour {
         }
     }
 
+    public int GetAnswer()
+    {
+        return answer;
+    }
+
     public void ClearScoreNumber()
     {
         scoreNumber = 0;
