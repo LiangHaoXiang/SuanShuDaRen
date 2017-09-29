@@ -282,12 +282,12 @@ public class ObjectManager : MonoBehaviour
         if (ballonNumber == -1)
         {
             ballon.transform.FindChild("BallonSelf").transform.GetComponent<BallonObject>().setBallonNumber("?");
-            ballon.transform.GetChild(6).GetChild(0).GetComponent<MeshRenderer>().material.color = Color.green;
+            //ballon.transform.GetChild(6).GetChild(0).GetComponent<MeshRenderer>().material.color = Color.green;
         }
         else
         {
             ballon.transform.FindChild("BallonSelf").transform.GetComponent<BallonObject>().setBallonNumber("" + number);
-            ballon.transform.GetChild(6).GetChild(0).GetComponent<MeshRenderer>().material.color = RandomManager.Instance.RandomColor();
+           // ballon.transform.GetChild(6).GetChild(0).GetComponent<MeshRenderer>().material.color = RandomManager.Instance.RandomColor();
 
         }
     }
