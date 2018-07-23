@@ -400,44 +400,25 @@ public class UIManager : MonoBehaviour
     {
         if (readyText != null)
         {
+            CleanReadyTime();
             if (sign.Equals("Ready"))
             {
                 readyText.transform.GetChild(0).gameObject.SetActive(true);
-                readyText.transform.GetChild(1).gameObject.SetActive(false);
-                readyText.transform.GetChild(2).gameObject.SetActive(false);
-                readyText.transform.GetChild(3).gameObject.SetActive(false);
-                readyText.transform.GetChild(4).gameObject.SetActive(false);
             }
             else if (sign.Equals("GO!!!"))
             {
-                readyText.transform.GetChild(0).gameObject.SetActive(false);
                 readyText.transform.GetChild(1).gameObject.SetActive(true);
-                readyText.transform.GetChild(2).gameObject.SetActive(false);
-                readyText.transform.GetChild(3).gameObject.SetActive(false);
-                readyText.transform.GetChild(4).gameObject.SetActive(false);
             }
             else if (sign.Equals("Right"))
             {
-                readyText.transform.GetChild(0).gameObject.SetActive(false);
-                readyText.transform.GetChild(1).gameObject.SetActive(false);
                 readyText.transform.GetChild(2).gameObject.SetActive(true);
-                readyText.transform.GetChild(3).gameObject.SetActive(false);
-                readyText.transform.GetChild(4).gameObject.SetActive(false);
             }
             else if (sign.Equals("Wrong"))
             {
-                readyText.transform.GetChild(0).gameObject.SetActive(false);
-                readyText.transform.GetChild(1).gameObject.SetActive(false);
-                readyText.transform.GetChild(2).gameObject.SetActive(false);
                 readyText.transform.GetChild(3).gameObject.SetActive(true);
-                readyText.transform.GetChild(4).gameObject.SetActive(false);
             }
             else if (sign.Equals("GameOver"))
             {
-                readyText.transform.GetChild(0).gameObject.SetActive(false);
-                readyText.transform.GetChild(1).gameObject.SetActive(false);
-                readyText.transform.GetChild(2).gameObject.SetActive(false);
-                readyText.transform.GetChild(3).gameObject.SetActive(false);
                 readyText.transform.GetChild(4).gameObject.SetActive(true);
             }
 
@@ -448,11 +429,15 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void CleanReadyTime()
     {
-        readyText.transform.GetChild(0).gameObject.SetActive(false);
-        readyText.transform.GetChild(1).gameObject.SetActive(false);
-        readyText.transform.GetChild(2).gameObject.SetActive(false);
-        readyText.transform.GetChild(3).gameObject.SetActive(false);
-        readyText.text = "";
+        if (readyText != null)
+        {
+            readyText.transform.GetChild(0).gameObject.SetActive(false);
+            readyText.transform.GetChild(1).gameObject.SetActive(false);
+            readyText.transform.GetChild(2).gameObject.SetActive(false);
+            readyText.transform.GetChild(3).gameObject.SetActive(false);
+            readyText.transform.GetChild(4).gameObject.SetActive(false);
+            readyText.text = "";
+        }
     }
     /// <summary>
     /// 显示题目面板（算数）
