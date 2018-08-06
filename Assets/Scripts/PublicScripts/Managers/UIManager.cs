@@ -234,32 +234,24 @@ public class UIManager : MonoBehaviour
             //两图片间x差值
             float ImageDelta_X = Images.transform.GetChild(1).position.x - Images.transform.GetChild(0).position.x;
             //小点点的变化
+            GameObject.Find("points").transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+            GameObject.Find("points").transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
+            GameObject.Find("points").transform.GetChild(2).GetChild(0).gameObject.SetActive(false);
+            GameObject.Find("points").transform.GetChild(3).GetChild(0).gameObject.SetActive(false);
             if (Images.transform.position.x >= ImagesBeginPoint_X)
             {
                 GameObject.Find("points").transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
-                GameObject.Find("points").transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
-                GameObject.Find("points").transform.GetChild(2).GetChild(0).gameObject.SetActive(false);
-                GameObject.Find("points").transform.GetChild(3).GetChild(0).gameObject.SetActive(false);
             }
             else if ((ImagesBeginPoint_X - ImageDelta_X) <= Images.transform.position.x && Images.transform.position.x < ImagesBeginPoint_X)
             {
-                GameObject.Find("points").transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
                 GameObject.Find("points").transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
-                GameObject.Find("points").transform.GetChild(2).GetChild(0).gameObject.SetActive(false);
-                GameObject.Find("points").transform.GetChild(3).GetChild(0).gameObject.SetActive(false);
             }
             else if ((ImagesBeginPoint_X - 2 * ImageDelta_X) <= Images.transform.position.x && Images.transform.position.x < (ImagesBeginPoint_X - ImageDelta_X))
             {
-                GameObject.Find("points").transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
-                GameObject.Find("points").transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
                 GameObject.Find("points").transform.GetChild(2).GetChild(0).gameObject.SetActive(true);
-                GameObject.Find("points").transform.GetChild(3).GetChild(0).gameObject.SetActive(false);
             }
             else if (ImagesEndPoint_X <= Images.transform.position.x && Images.transform.position.x < (ImagesEndPoint_X + ImageDelta_X))
             {
-                GameObject.Find("points").transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
-                GameObject.Find("points").transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
-                GameObject.Find("points").transform.GetChild(2).GetChild(0).gameObject.SetActive(false);
                 GameObject.Find("points").transform.GetChild(3).GetChild(0).gameObject.SetActive(true);
             }
 
